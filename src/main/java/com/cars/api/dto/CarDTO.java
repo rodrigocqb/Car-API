@@ -1,5 +1,24 @@
 package com.cars.api.dto;
 
-public record CarDTO(String modelo, String fabricante, String dataFabricacao, int valor, int anoModelo) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Past;
+
+public record CarDTO(
+    @NotBlank
+    String modelo, 
+    
+    @NotBlank
+    String fabricante, 
+
+    @NotBlank
+    @Past
+    String dataFabricacao,
+
+    @NotBlank
+    int valor, 
+
+    @NotBlank
+    int anoModelo
+    ) {
 
 }
